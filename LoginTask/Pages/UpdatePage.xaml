@@ -1,0 +1,21 @@
+﻿<Window x:Class="LoginTask.Pages.UpdatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LoginTask.Pages"
+      mc:Ignorable="d" 
+      Height="350"
+      Width="500"
+      Title="UpdatePage"
+      Background="White">
+
+    <Grid Loaded="Grid_Loaded">
+        <Label VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Margin="40,79,0,0">User</Label>
+        <TextBox x:Name="textboxUser" FontSize="20" HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="205"/>
+        <Label VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Margin="40,151,0,0" RenderTransformOrigin="0.492,-0.472">Password</Label>
+        <TextBox x:Name="textBoxPassword" FontSize="20" HorizontalAlignment="Center" Margin="0,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="204" RenderTransformOrigin="0.496,-4.4"/>
+
+        <Button Content="Update" HorizontalAlignment="Left" Margin="262,219,0,0" VerticalAlignment="Top" Width="72" Background="#FF01A3FF" Click="Button_Click" RenderTransformOrigin="1.074,-0.138" Height="25"/>
+    </Grid>
+</Window>

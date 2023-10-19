@@ -1,0 +1,56 @@
+﻿<Page x:Class="LoginTask.Pages.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LoginTask.Pages"
+      mc:Ignorable="d" 
+     Background="WhiteSmoke"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      Height="Auto"
+      Width="Auto"
+      Title="Dashboard">
+    <Grid Height="600" Width="800">
+        <Grid Height="600" >
+            <Grid HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="189" Background="#FF0045A5">
+                <Button x:Name="homebutton" Content="Inbox" HorizontalAlignment="Left" Margin="0,138,0,0" VerticalAlignment="Top" Width="189" Height="63" FontFamily="Century Gothic" FontSize="20" Foreground="#FFFBFBFB" BorderBrush="{x:Null}" Click="Button_Click_Inbox">
+                    <Button.Background>
+                        <ImageBrush/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="userbutton" Content="Drafts" HorizontalAlignment="Left" Margin="0,210,0,0" VerticalAlignment="Top" Width="189" Height="63" Background="{x:Null}" FontFamily="Century Gothic" FontSize="20" Foreground="#FFFBFBFB" BorderBrush="{x:Null}" Click="Button_Clickusers"/>
+                <Button Content="Sent" HorizontalAlignment="Left" Margin="0,359,0,0" VerticalAlignment="Top" Width="189" Height="63" Background="{x:Null}" FontFamily="Century Gothic" FontSize="20" Foreground="#FFFBFBFB" BorderBrush="{x:Null}"/>
+                <Button Content="More" HorizontalAlignment="Left" Margin="0,284,0,0" VerticalAlignment="Top" Width="189" Height="63" Background="{x:Null}" FontFamily="Century Gothic" FontSize="20" Foreground="#FFFBFBFB" RenderTransformOrigin="0.458,1.651" BorderBrush="{x:Null}"/>
+                <Button Content="Themes" HorizontalAlignment="Left" Margin="0,436,0,0" VerticalAlignment="Top" Width="189" Height="63" Background="{x:Null}" FontFamily="Century Gothic" FontSize="20" Foreground="#FFFBFBFB" BorderBrush="{x:Null}"/>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="67" Margin="189,0,0,0" VerticalAlignment="Top" Width="611" Background="#FF0045A5"/>
+
+            <DataGrid x:Name="myDataGrid" FontSize="19" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*" Margin="189,67,10,140" RenderTransformOrigin="0.494,0.828" Height="NaN" Loaded="myDataGrid_Loaded">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="User Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Action"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="updateBtn" Background="ForestGreen" Margin="3" Content="Update" Click="updateBtn_Click"/>
+                                    <Button x:Name="deleteBtn" Background="OrangeRed" Margin="3" Content="Delete" Click="deleteBtn_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+    </Grid>
+</Page>
